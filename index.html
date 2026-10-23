@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4f0">
+    <title>Lucky Draw — Random Name Picker</title>
+    <link rel="stylesheet" href="/static/app.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Lucky Draw home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>lucky draw</span>
+        </a>
+        <span class="topbar-note"><span class="status-dot"></span> YOUR MOMENT OF CHANCE</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">FAIR. FUN. TOTALLY RANDOM.</p>
+        <h1 id="page-title">Let fate<br>pick a <span>name.</span></h1>
+        <p class="intro-copy">Add your people, take a breath, and let the suspense build. The rest is up to chance.</p>
+      </section>
+
+      <section class="picker-card" aria-label="Random name picker">
+        <div class="card-heading">
+          <div>
+            <h2>Your list</h2>
+            <p>One name per line. No limit on who you root for.</p>
+          </div>
+          <span id="name-count" class="count-badge">0 names</span>
+        </div>
+
+        <label class="visually-hidden" for="names">Names, one per line</label>
+        <textarea id="names" maxlength="55000" placeholder="e.g.&#10;Alex Morgan&#10;Sam Rivera&#10;Jordan Lee" spellcheck="false"></textarea>
+
+        <div class="card-footer">
+          <span class="hint"><span aria-hidden="true">↵</span> One name per line</span>
+          <button id="pick-button" class="pick-button" type="button" disabled>
+            <span id="button-label">Pick a name</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="result" class="result-card" aria-live="polite" aria-atomic="true" hidden>
+        <p id="result-label" class="result-label">AND THE PICK IS...</p>
+        <div id="countdown" class="countdown" hidden aria-hidden="true"></div>
+        <p id="winner" class="winner" hidden></p>
+        <p id="result-caption" class="result-caption" hidden>Looks like luck is on your side.</p>
+      </section>
+
+      <footer class="page-footer">
+        <span>THE UNIVERSE HAS A SHORTLIST.</span>
+        <span>✳ &nbsp; MADE FOR THE BIG REVEAL</span>
+      </footer>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
